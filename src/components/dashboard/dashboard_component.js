@@ -22,7 +22,7 @@ const Dashboard = () => {
     dispatch(getProducts());
     dispatch(getUsers());
 
-  }, []);
+  },[dispatch]);        //dependency array removed
   
   function handleDelete(index, id){
     axios.delete(process.env.REACT_APP_BASE_URL+`/users/${id}`,  
@@ -34,7 +34,7 @@ const Dashboard = () => {
       }
     })
     .then((response) => {
-      if(response.data.status == 400){
+      if(response.data.status === 400){
         alert(response.data.msg);
       } else {
         dispatch(getUsers());
@@ -55,7 +55,8 @@ const Dashboard = () => {
   const orderToBePlaced = productsArr.filter(function(item) {
   if (item.quantity < item.parLevel) {
       return(true);
-  }
+  } 
+  return false;
   });
 
   //console.log(orderToBePlaced);

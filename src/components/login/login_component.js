@@ -110,7 +110,7 @@ const Login = () => {
        </div>
        
        
-          <img src={secondPic} style={{height: "300px", width: "100%", marginLeft: "0px"}}/>
+          <img src={secondPic} style={{height: "300px", width: "100%", marginLeft: "0px"}} alt="inventory pic"/>
        
       
      <Footer/>

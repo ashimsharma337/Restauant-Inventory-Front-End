@@ -48,25 +48,18 @@ const EditProduct = () => {
         .catch((error) => {
           console.log(error);
         })
-  },[])
+  },[params.id])
 
   const handleChange = (e) => {
-        const { name, value, type, files} = e.target;
-    
-        // if(type == "file"){
-        //   let {filesToUpload} = images;
-
-        //   filesToUpload = Object.keys(files).map((key) => files[key]);
-
-        //   setImages(filesToUpload);
-        // } else {
+        const { name, value } = e.target;
+        
           setProductData({
 
             ...productData,
             [name]: value
 
           });
-        // }
+        
   }
 
   const handleSubmit = (e) => {

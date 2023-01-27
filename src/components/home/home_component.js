@@ -39,7 +39,7 @@ const Home = () => {
               debitis culpa natus ut?</p>
           </div> */}
           <div className="col-sm-12">
-                <img src={inventoryImage} style={{maxHeight:"100%", maxWidth:"100%"}}/>
+                <img src={inventoryImage} style={{maxHeight:"100%", maxWidth:"100%"}} alt="inventory"/>
             </div>
         </div>
       </div>

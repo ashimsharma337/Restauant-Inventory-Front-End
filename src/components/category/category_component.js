@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import HeaderN from '../dashboard/common/header/header_component';
 import Sidebar from '../dashboard/common/sidebar/sidebar_component';
-import { MdSend, MdEdit, MdOutlineDeleteForever } from "react-icons/md";
+import { MdEdit, MdOutlineDeleteForever } from "react-icons/md";
 import { httpRequest } from "../../services/httpclient";
 import toast, { Toaster } from 'react-hot-toast';
 import { NavLink } from "react-router-dom";
@@ -9,8 +8,7 @@ import Heading from '../dashboard/common/heading/heading';
 import DashboardHeader from '../dashboard/common/header/header_component';
 
 const Category = () => {
-    const userInfo = JSON.parse(localStorage.getItem("user_info"));
-     
+   
     const [allCategories, setAllCategories] = useState([]);
 
     // Fetch all the categories from server

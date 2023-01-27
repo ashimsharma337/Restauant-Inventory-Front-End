@@ -51,7 +51,7 @@ const AddProduct = () => {
         // console.log("type", type);
         // console.log("files", files);
 
-        if(type == "file"){
+        if(type === "file"){
           let {filesToUpload} = images;
 
           filesToUpload = Object.keys(files).map((key) => files[key]);
@@ -82,7 +82,7 @@ const AddProduct = () => {
         
         // file data
         images.map((obj) => {
-           formData.append("image", obj, obj.name);
+           return formData.append("image", obj, obj.name);
         })
         // product data
         for(let key in productData){
@@ -97,7 +97,7 @@ const AddProduct = () => {
           toast.error(error);
       })
     }
-  },[errors])
+  },[errors, images, isSubmit, navigate, productData])
 
   const validateForm = (values) => {
     let errors = {};
@@ -214,7 +214,7 @@ const AddProduct = () => {
                      {
                        images.map((image, i) => (
                          <div key={i} className="col-md-3">
-                           <img src={URL.createObjectURL(image)} className='img img-fluid img-thumbnail'/>
+                           <img src={URL.createObjectURL(image)} className='img img-fluid img-thumbnail' alt="product"/>
                          </div>
                        ))
                      }

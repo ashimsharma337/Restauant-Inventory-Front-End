@@ -28,7 +28,7 @@ const EditCategory = () => {
            console.log("Error: ", error);
       })
 
-    },[]);
+    },[params.id]);    
 
     useEffect(() => {
         httpRequest.getItems("/category", true)

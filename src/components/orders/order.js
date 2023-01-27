@@ -7,7 +7,6 @@ import Heading from "../dashboard/common/heading/heading";
 import ReactToPrint from 'react-to-print';
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, getUsers, setOrders } from "../../redux/actions/actions";
-import { useNavigate } from 'react-router-dom';
 import { httpRequest } from '../../services/httpclient';
 import moment  from 'moment';
 import { MdPrint, MdAdd, MdSend, MdNavigateBefore } from "react-icons/md";
@@ -17,8 +16,6 @@ import { MdPrint, MdAdd, MdSend, MdNavigateBefore } from "react-icons/md";
 
 const Order = () => {
     const componentRef = useRef();
-
-    const navigate = useNavigate("/orders");
 
     const data = useSelector((state) => state);
 
@@ -30,7 +27,7 @@ const Order = () => {
         dispatch(getUsers());
         // dispatch(getOrders());
 
-    }, []);
+    });
 
    
 
@@ -67,7 +64,7 @@ const Order = () => {
         const user = JSON.parse(localStorage.getItem("user_info"));
         
         productsArr.filter(function(item) {
-            if (item.title == order.orderItem) {
+            if (item.title === order.orderItem) {
                 
                 let itemPrice = item.price;
                 let unit = item.unit;
@@ -86,6 +83,7 @@ const Order = () => {
                 
             
             }
+            return true;
          });
           
     };
