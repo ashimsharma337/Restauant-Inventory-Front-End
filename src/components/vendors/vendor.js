@@ -17,7 +17,7 @@ const Vendor = () => {
 
     dispatch(getProducts());
 
-  }, []);
+  }, [dispatch]);
   
   let productsArr = data.allProducts.products;
 

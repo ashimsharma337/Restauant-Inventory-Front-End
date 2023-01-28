@@ -29,7 +29,7 @@ const EditQuantity = () => {
         .catch((error) => {
           console.log(error);
         })
-  },[])
+  },[params.id])
 
   const handleChange = (e) => {
         const { name, value } = e.target;

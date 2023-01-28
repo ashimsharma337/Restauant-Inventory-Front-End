@@ -54,11 +54,11 @@ const Register = () => {
          console.log((error));
        })
      }
-  }, [errors])
+  }, [errors,isSubmit,navigate,userDetail])
 
   const validateForm = (values) => {
         let errors = {};
-        var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var pattern =/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/;
         if(!values.name){
           errors.name = "Name is required";
         } 
@@ -67,7 +67,7 @@ const Register = () => {
         } else if (!pattern.test(values.email)){
           errors.email = "Invalid Email!";
         }
-        if(values.position == ''){
+        if(values.position === ''){
           errors.position = "position is required";
         }
         if(!values.password){
@@ -77,7 +77,7 @@ const Register = () => {
         }
         if(!values.cpassword){
           errors.cpassword = "Re-Password is required";
-        } else if(values.password != values.cpassword){
+        } else if(values.password !== values.cpassword){
           errors.cpassword = "Password and Re-Password must matched!"
         }
         if(!values.restaurantName){
